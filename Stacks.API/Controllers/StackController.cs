@@ -1,23 +1,19 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Stacks.API.Models;
 using Stacks.API.ViewModels;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Threading.Tasks;
 
 namespace Stacks.API.Controllers
 {
-    [Route("app")]
-//    [Authorize]
-    public class AppController: Controller
+    [Route("stacks")]
+    public class StackController: Controller
     {
         private IStacksRepository _repository;
-        private ILogger<AppController> _logger;
-        public AppController(IStacksRepository repository, ILogger<AppController> logger)
+        private ILogger<StackController> _logger;
+        public StackController(IStacksRepository repository, ILogger<StackController> logger)
         {
             _repository = repository;
             _logger = logger;
